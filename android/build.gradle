@@ -23,5 +23,5 @@ android {
 
 dependencies {
     compile 'com.facebook.react:react-native:+'
-    compile files('libs/core-4.3.1-openDefaultRelease.aar')
+    compile files('libs/openDefault-4.4.1.aar')
 }
