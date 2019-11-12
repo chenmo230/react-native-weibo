@@ -130,11 +130,10 @@ public class WeiboModule extends ReactContextBaseJavaModule implements ActivityE
     }
 
     private void _installWbSdk(final ReadableMap config) {
-        if (!wbSdkInstalled) {
-            AuthInfo sinaAuthInfo = this._genAuthInfo(config);
-            WbSdk.install(getCurrentActivity(), sinaAuthInfo);
-            wbSdkInstalled = true;
-        }
+
+        AuthInfo sinaAuthInfo = this._genAuthInfo(config);
+
+        WbSdk.install(getReactApplicationContext(), sinaAuthInfo);
     }
 
 
@@ -143,12 +142,10 @@ public class WeiboModule extends ReactContextBaseJavaModule implements ActivityE
 
         this._installWbSdk(config);
 
-        if (mSsoHandler == null) {
-            mSsoHandler = new SsoHandler(getCurrentActivity());
-            mSsoHandler.authorize(this.genWeiboAuthListener());
-        }
+        mSsoHandler = new SsoHandler(getCurrentActivity());
+        mSsoHandler.authorize(this.genWeiboAuthListener());
 
-        callback.invoke();
+       callback.invoke();
     }
 
     @ReactMethod
