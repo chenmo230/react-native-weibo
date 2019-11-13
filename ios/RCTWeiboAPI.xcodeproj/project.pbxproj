@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		85CC7C58237AC5B200CA1E77 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CC7C57237AC5B200CA1E77 /* libWeiboSDK.a */; };
 		915450F91C3D1520000CBFD2 /* RCTWeiboAPI.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 915450F81C3D1520000CBFD2 /* RCTWeiboAPI.h */; };
 		915450FB1C3D1520000CBFD2 /* RCTWeiboAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 915450FA1C3D1520000CBFD2 /* RCTWeiboAPI.m */; };
 /* End PBXBuildFile section */
@@ -28,7 +27,6 @@
 
 /* Begin PBXFileReference section */
 		857CBE5423755FE4001875A7 /* libWeiboSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = libWeiboSDK; sourceTree = "<group>"; };
-		85CC7C57237AC5B200CA1E77 /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWeiboSDK.a; path = libWeiboSDK/libWeiboSDK.a; sourceTree = "<group>"; };
 		915450F51C3D1520000CBFD2 /* libRCTWeiboAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTWeiboAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		915450F81C3D1520000CBFD2 /* RCTWeiboAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTWeiboAPI.h; sourceTree = "<group>"; };
 		915450FA1C3D1520000CBFD2 /* RCTWeiboAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTWeiboAPI.m; sourceTree = "<group>"; };
@@ -39,28 +37,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85CC7C58237AC5B200CA1E77 /* libWeiboSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		85CC7C56237AC5B200CA1E77 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				85CC7C57237AC5B200CA1E77 /* libWeiboSDK.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		915450EC1C3D1520000CBFD2 = {
 			isa = PBXGroup;
 			children = (
 				857CBE5423755FE4001875A7 /* libWeiboSDK */,
 				915450F71C3D1520000CBFD2 /* RCTWeiboAPI */,
 				915450F61C3D1520000CBFD2 /* Products */,
-				85CC7C56237AC5B200CA1E77 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -232,7 +220,6 @@
 					"$(SRCROOT)/../../react-native/React/**",
 					"$(SRCROOT)/../../react-native/Libraries/**",
 					"$(BUILT_PRODUCTS_DIR)/include/**",
-					"$(PROJECT_DIR)/libWeiboSDK",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -253,7 +240,6 @@
 					"$(SRCROOT)/../../react-native/React/**",
 					"$(SRCROOT)/../../react-native/Libraries/**",
 					"$(BUILT_PRODUCTS_DIR)/include/**",
-					"$(PROJECT_DIR)/libWeiboSDK",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
