@@ -7,8 +7,7 @@
 //
 
 #import <React/RCTBridgeModule.h>
-#import <React/RCTEventEmitter.h>
 
-@interface RCTWeiboAPI : RCTEventEmitter<RCTBridgeModule>
+@interface RCTWeiboAPI : NSObject<RCTBridgeModule>
 
 @end

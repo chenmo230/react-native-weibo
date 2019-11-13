@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id=":rn-weibo" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/../../../android" external.system.id="GRADLE" type="JAVA_MODULE" version="4">
+<module external.linked.project.id=":react-native-weibo" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/../../../android" external.system.id="GRADLE" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="android-gradle" name="Android-Gradle">
       <configuration>
-        <option name="GRADLE_PROJECT_PATH" value=":rn-weibo" />
+        <option name="GRADLE_PROJECT_PATH" value=":react-native-weibo" />
         <option name="LAST_SUCCESSFUL_SYNC_AGP_VERSION" value="3.4.2" />
         <option name="LAST_KNOWN_AGP_VERSION" value="3.4.2" />
       </configuration>
@@ -100,7 +100,7 @@
     <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp-urlconnection:3.12.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp:3.12.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okio:okio:1.15.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:/Users/breezedeng/dev/Daphne/node_modules/rn-weibo/android/libs/openDefault-4.4.1.aar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/breezedeng/dev/Daphne/node_modules/react-native-weibo/android/libs/openDefault-4.4.1.aar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.react:react-native:0.61.4@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.appcompat:appcompat:1.0.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.fragment:fragment:1.0.0@aar" level="project" />

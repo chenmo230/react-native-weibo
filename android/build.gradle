@@ -22,7 +22,6 @@ android {
 }
 
 dependencies {
-    implementation 'com.android.support:appcompat-v7:23.1.1'
     implementation 'com.facebook.react:react-native:+'
-    implementation 'com.sina.weibo.sdk:core:4.3.6:openDefaultRelease@aar'
+    implementation files("libs/openDefault-4.3.6.aar")
 }

@@ -1,9 +1,9 @@
 n-weibo
 React Native's Sina Weibo login sharing plugin
 
-This warehouse fork from [reactnativecn/react-native-weibo] (https://github.com/reactnativecn/react-native-weibo), but the source warehouse has not been maintained for a long time, so I made a new version of react-native and weiboSDK After the adaptation, npm released a new package `rn-weibo`.
+This warehouse fork from [reactnativecn/react-native-weibo] (https://github.com/reactnativecn/react-native-weibo), but the source warehouse has not been maintained for a long time, so I made a new version of react-native and weiboSDK After the adaptation, npm released a new package `react-native-weibo`.
 
-And I forked from `rn-weibo` to fix error: "Unknown client id" from Android.
+And I forked from `react-native-weibo` to fix error: "Unknown client id" from Android.
 
 ## Version Requirements
 
@@ -15,7 +15,7 @@ And I forked from `rn-weibo` to fix error: "Unknown client id" from Android.
 ### 1. First install the npm package
 
 ```bash
-Npm install rn-weibo --save
+Npm install react-native-weibo --save
 ```
 
 ### 2.link

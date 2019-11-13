@@ -7,40 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		915450F91C3D1520000CBFD2 /* RCTWeiboAPI.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 915450F81C3D1520000CBFD2 /* RCTWeiboAPI.h */; };
+		85CC7C58237AC5B200CA1E77 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CC7C57237AC5B200CA1E77 /* libWeiboSDK.a */; };
+		915450F91C3D1520000CBFD2 /* RCTWeiboAPI.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 915450F81C3D1520000CBFD2 /* RCTWeiboAPI.h */; };
 		915450FB1C3D1520000CBFD2 /* RCTWeiboAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 915450FA1C3D1520000CBFD2 /* RCTWeiboAPI.m */; };
-		9154511B1C3D161E000CBFD2 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9154510F1C3D161E000CBFD2 /* libWeiboSDK.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		915450F31C3D1520000CBFD2 /* CopyFiles */ = {
+		915450F31C3D1520000CBFD2 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				915450F91C3D1520000CBFD2 /* RCTWeiboAPI.h in CopyFiles */,
+				915450F91C3D1520000CBFD2 /* RCTWeiboAPI.h in Copy Files */,
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		857CBE5423755FE4001875A7 /* libWeiboSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = libWeiboSDK; sourceTree = "<group>"; };
+		85CC7C57237AC5B200CA1E77 /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWeiboSDK.a; path = libWeiboSDK/libWeiboSDK.a; sourceTree = "<group>"; };
 		915450F51C3D1520000CBFD2 /* libRCTWeiboAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTWeiboAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		915450F81C3D1520000CBFD2 /* RCTWeiboAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTWeiboAPI.h; sourceTree = "<group>"; };
 		915450FA1C3D1520000CBFD2 /* RCTWeiboAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTWeiboAPI.m; sourceTree = "<group>"; };
-		9154510F1C3D161E000CBFD2 /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
-		915451101C3D161E000CBFD2 /* WBHttpRequest+WeiboGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboGame.h"; sourceTree = "<group>"; };
-		915451111C3D161E000CBFD2 /* WBHttpRequest+WeiboShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboShare.h"; sourceTree = "<group>"; };
-		915451121C3D161E000CBFD2 /* WBHttpRequest+WeiboToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboToken.h"; sourceTree = "<group>"; };
-		915451131C3D161E000CBFD2 /* WBHttpRequest+WeiboUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WBHttpRequest+WeiboUser.h"; sourceTree = "<group>"; };
-		915451141C3D161E000CBFD2 /* WBHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBHttpRequest.h; sourceTree = "<group>"; };
-		915451151C3D161E000CBFD2 /* WBSDKBasicButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKBasicButton.h; sourceTree = "<group>"; };
-		915451161C3D161E000CBFD2 /* WBSDKCommentButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKCommentButton.h; sourceTree = "<group>"; };
-		915451171C3D161E000CBFD2 /* WBSDKRelationshipButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDKRelationshipButton.h; sourceTree = "<group>"; };
-		915451181C3D161E000CBFD2 /* WeiboSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WeiboSDK.bundle; sourceTree = "<group>"; };
-		915451191C3D161E000CBFD2 /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboSDK.h; sourceTree = "<group>"; };
-		9154511A1C3D161E000CBFD2 /* WeiboUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboUser.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,19 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9154511B1C3D161E000CBFD2 /* libWeiboSDK.a in Frameworks */,
+				85CC7C58237AC5B200CA1E77 /* libWeiboSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		85CC7C56237AC5B200CA1E77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				85CC7C57237AC5B200CA1E77 /* libWeiboSDK.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		915450EC1C3D1520000CBFD2 = {
 			isa = PBXGroup;
 			children = (
-				9154510E1C3D161E000CBFD2 /* libWeiboSDK */,
+				857CBE5423755FE4001875A7 /* libWeiboSDK */,
 				915450F71C3D1520000CBFD2 /* RCTWeiboAPI */,
 				915450F61C3D1520000CBFD2 /* Products */,
+				85CC7C56237AC5B200CA1E77 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,25 +81,6 @@
 			path = RCTWeiboAPI;
 			sourceTree = "<group>";
 		};
-		9154510E1C3D161E000CBFD2 /* libWeiboSDK */ = {
-			isa = PBXGroup;
-			children = (
-				9154510F1C3D161E000CBFD2 /* libWeiboSDK.a */,
-				915451101C3D161E000CBFD2 /* WBHttpRequest+WeiboGame.h */,
-				915451111C3D161E000CBFD2 /* WBHttpRequest+WeiboShare.h */,
-				915451121C3D161E000CBFD2 /* WBHttpRequest+WeiboToken.h */,
-				915451131C3D161E000CBFD2 /* WBHttpRequest+WeiboUser.h */,
-				915451141C3D161E000CBFD2 /* WBHttpRequest.h */,
-				915451151C3D161E000CBFD2 /* WBSDKBasicButton.h */,
-				915451161C3D161E000CBFD2 /* WBSDKCommentButton.h */,
-				915451171C3D161E000CBFD2 /* WBSDKRelationshipButton.h */,
-				915451181C3D161E000CBFD2 /* WeiboSDK.bundle */,
-				915451191C3D161E000CBFD2 /* WeiboSDK.h */,
-				9154511A1C3D161E000CBFD2 /* WeiboUser.h */,
-			);
-			path = libWeiboSDK;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,7 +90,7 @@
 			buildPhases = (
 				915450F11C3D1520000CBFD2 /* Sources */,
 				915450F21C3D1520000CBFD2 /* Frameworks */,
-				915450F31C3D1520000CBFD2 /* CopyFiles */,
+				915450F31C3D1520000CBFD2 /* Copy Files */,
 			);
 			buildRules = (
 			);
@@ -199,7 +180,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -236,7 +217,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -251,10 +232,12 @@
 					"$(SRCROOT)/../../react-native/React/**",
 					"$(SRCROOT)/../../react-native/Libraries/**",
 					"$(BUILT_PRODUCTS_DIR)/include/**",
+					"$(PROJECT_DIR)/libWeiboSDK",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/libWeiboSDK",
+					"$(PROJECT_DIR)/RCTWeiboAPI/libWeiboSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -270,10 +253,12 @@
 					"$(SRCROOT)/../../react-native/React/**",
 					"$(SRCROOT)/../../react-native/Libraries/**",
 					"$(BUILT_PRODUCTS_DIR)/include/**",
+					"$(PROJECT_DIR)/libWeiboSDK",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/libWeiboSDK",
+					"$(PROJECT_DIR)/RCTWeiboAPI/libWeiboSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

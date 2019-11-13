@@ -9,14 +9,25 @@
 #import "RCTWeiboAPI.h"
 #import "WeiboSDK.h"
 
+#if __has_include(<React/RCTBridge.h>)
+#import <React/RCTBridge.h>
+#import <React/RCTEventDispatcher.h>
 #import <React/RCTImageLoader.h>
+#else
+#import "RCTBridge.h"
+#import "RCTEventDispatcher.h"
+#import "RCTImageLoader.h"
+#endif
 
 #define INVOKE_FAILED (@"WeiBo API invoke returns false.")
 #define RCTWBEventName (@"Weibo_Resp")
 
+
+#define RCTWBShareTypeNews @"news"
 #define RCTWBShareTypeImage @"image"
 #define RCTWBShareTypeText @"text"
 #define RCTWBShareTypeVideo @"video"
+#define RCTWBShareTypeAudio @"audio"
 
 #define RCTWBShareType @"type"
 #define RCTWBShareText @"text"
@@ -34,35 +45,7 @@ BOOL gRegister = NO;
 
 @implementation RCTWeiboAPI
 
-{
-  bool hasListeners;
-}
-
-
 @synthesize bridge = _bridge;
-
-+(BOOL)requiresMainQueueSetup {
-    return YES;
-}
-
-// Will be called when this module's first listener is added.
--(void)startObserving {
-    hasListeners = YES;
-    // Set up any upstream listeners or background tasks as necessary
-}
-
-
-// Will be called when this module's last listener is removed, or on dealloc.
--(void)stopObserving {
-    hasListeners = NO;
-    // Remove upstream listeners, stop unnecessary background tasks
-}
-
-
-- (NSArray<NSString *> *)supportedEvents
-{
-  return @[RCTWBEventName];
-}
 
 RCT_EXPORT_MODULE();
 
@@ -79,6 +62,11 @@ RCT_EXPORT_MODULE();
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleOpenURL:) name:@"RCTOpenURLNotification" object:nil];
     }
     return self;
+}
+
++ (BOOL)requiresMainQueueSetup
+{
+    return YES;
 }
 
 - (void)dealloc
@@ -181,10 +169,7 @@ RCT_EXPORT_METHOD(shareToWeibo:(NSDictionary *)aData
             body[@"errMsg"] = [self _getErrMsg:response.statusCode];
         }
     }
-
-    if (hasListeners) {
-        [self sendEventWithName:RCTWBEventName body:body];
-    }
+    [self.bridge.eventDispatcher sendAppEventWithName:RCTWBEventName body:body];
 }
 
 #pragma mark - private
@@ -232,17 +217,17 @@ RCT_EXPORT_METHOD(shareToWeibo:(NSDictionary *)aData
         case WeiboSDKResponseStatusCodeUserCancelInstall:
             errMsg = @"用户取消安装微博客户端";
             break;
-        case WeiboSDKResponseStatusCodePayFail:
-            errMsg = @"支付失败";
-            break;
         case WeiboSDKResponseStatusCodeShareInSDKFailed:
             errMsg = @"分享失败";
             break;
         case WeiboSDKResponseStatusCodeUnsupport:
             errMsg = @"不支持的请求";
             break;
+        case WeiboSDKResponseStatusCodeUnknown:
+            errMsg = @"未知";
+            break;
         default:
-            errMsg = @"位置";
+            errMsg = @"未知";
             break;
     }
     return errMsg;
@@ -268,9 +253,13 @@ RCT_EXPORT_METHOD(shareToWeibo:(NSDictionary *)aData
     else {
         if ([type isEqualToString:RCTWBShareTypeVideo]) {
             WBNewVideoObject *videoObject = [WBNewVideoObject new];
-            NSURL *videoUrl = aData[RCTWBShareWebpageUrl];
-            [videoObject addVideo:videoUrl];
+            [videoObject addVideo: aData[RCTWBShareWebpageUrl]];
             message.videoObject = videoObject;
+        }
+        else if ([type isEqualToString:RCTWBShareTypeAudio]) {
+            WBNewVideoObject *musicObject = [WBNewVideoObject new];
+            [musicObject addVideo: aData[RCTWBShareWebpageUrl]];
+            message.videoObject = musicObject;
         }
         else {
             WBWebpageObject *webpageObject = [WBWebpageObject new];
@@ -296,10 +285,7 @@ RCT_EXPORT_METHOD(shareToWeibo:(NSDictionary *)aData
         body[@"errMsg"] = INVOKE_FAILED;
         body[@"errCode"] = @(-1);
         body[@"type"] = @"WBSendMessageToWeiboResponse";
-
-        if (hasListeners) {
-            [self sendEventWithName:RCTWBEventName body:body];
-        }
+        [_bridge.eventDispatcher sendAppEventWithName:RCTWBEventName body:body];
     }
 }
 
@@ -311,8 +297,17 @@ RCT_EXPORT_METHOD(shareToWeibo:(NSDictionary *)aData
     WBAuthorizeRequest *authRequest = [WBAuthorizeRequest request];
     authRequest.redirectURI = redirectURI;
     authRequest.scope = scope;
-
+    
     return authRequest;
+}
+
+- (NSDictionary<NSString *, id> *)constantsToExport {
+    return @{
+             @"isWeiboAppInstalled": @([WeiboSDK isWeiboAppInstalled]),
+             @"isCanShareInWeiboAPP": @([WeiboSDK isCanShareInWeiboAPP]),
+             @"isCanSSOInWeiboApp": @([WeiboSDK isCanSSOInWeiboApp]),
+             @"getSDKVersion": [WeiboSDK getSDKVersion]
+        };
 }
 
 @end
